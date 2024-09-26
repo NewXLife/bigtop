@@ -889,9 +889,10 @@ project.afterEvaluate {
   doValidateBOM(config)
   config.bigtop.components.each { component_label, comp ->
     assert component_label == comp.name
-    if (!comp.packaging || comp.packaging.equalsIgnoreCase(nativePackaging.pkg)) {
-      genTasks(comp.name)
-    }
+    genTasks(comp.name)
+//    if (!comp.packaging || comp.packaging.equalsIgnoreCase(nativePackaging.pkg)) {
+//      genTasks(comp.name)
+//    }
   }
   // Versions need to be preserved for more than just component:
   //  - there are JDK version requirement
